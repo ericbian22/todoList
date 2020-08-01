@@ -5,12 +5,13 @@ var ejs=require("ejs");
 var date=require(__dirname+"/date.js");
 var mongoose=require("mongoose");
 var _=require("lodash");
+var dbKey=require(__dirname+"/databasekey.js");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
 let day=date.getDate();
-mongoose.connect("mongodb+srv://admin-Eric:20060230@cluster0.ns8ky.mongodb.net/todolistDB",{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(dbKey.mongooseKey,{useNewUrlParser: true, useUnifiedTopology: true});
 
 const  itemSchema=new mongoose.Schema({
   name:String
