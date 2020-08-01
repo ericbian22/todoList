@@ -135,6 +135,6 @@ app.get("/about",function(req,res){
   res.render("about");
 });
 
-app.listen(2998,function(){
+app.listen(process.env.PORT||2998,function(){
   console.log("Server is running on port 2998");
 });
