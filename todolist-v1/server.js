@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 
 let day=date.getDate();
-mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://admin-Eric:20060230@cluster0.ns8ky.mongodb.net/todolistDB",{useNewUrlParser: true, useUnifiedTopology: true});
 
 const  itemSchema=new mongoose.Schema({
   name:String
